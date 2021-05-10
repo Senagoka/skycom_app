@@ -1,0 +1,43 @@
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
+import ProductList from "./components/ProductList";
+import Details from "./components/Details";
+import Cart from "./components/Cart"; //  changed the main file in cart folder to be cart.js using package.json inside the cartfolder
+import Default from "./components/Default";
+import Modal from "./components/Modal";
+import AddressForm from "./components/AddressForm";
+import ProductPage from "./components/ProductPage";
+import ContactPage from "./components/ContactPage";
+import Footer from "./components/Footer";
+import LoginScreen from "./components/screens/loginScreen";
+import SignupUserScreen from "./components/screens/RegisterUserScreen";
+
+function App() {
+  return (
+    <React.Fragment>
+      <main>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/details" component={Details} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/login" component={LoginScreen} />
+          <Route path="/register" component={SignupUserScreen} />
+          <Route path="/order" component={AddressForm} />
+          <Route path="/products" component={ProductPage} />
+          <Route path="/contact" component={ContactPage} />
+
+          <Route component={Default} />
+        </Switch>
+
+        <Modal />
+        <Footer />
+      </main>
+    </React.Fragment>
+  );
+}
+
+export default App;
