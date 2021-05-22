@@ -12,7 +12,7 @@ function CartList({ value }) {
       })}
     </div>
   );
-  return null;
+  // return null;
 }
 
 export default CartList;

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../logo.svg";
+// import logo from "../logo.svg";
 import { ButtonContainer } from "./button";
 import styled from "styled-components";
-import LoginScreen from "./screens/loginScreen";
-import SignupUserScreen from "./screens/RegisterUserScreen";
+// import LoginScreen from "./screens/loginScreen";
+// import SignupUserScreen from "./screens/RegisterUserScreen";
 
 class Navbar extends Component {
   state = {};

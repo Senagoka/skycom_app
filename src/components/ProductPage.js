@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ProductConsumer } from "../context";
+// import { ProductConsumer } from "../context";
 import Title from "./Title";
-import { storeProducts, detailProduct } from "../data";
+import { storeProducts} from "../data";
 import ProductPageElement from "./ProductPageElement";
 import Pagination from "./pagination";
 import styles from "./ProductPage.module.css";

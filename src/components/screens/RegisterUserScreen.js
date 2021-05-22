@@ -2,15 +2,15 @@ import { useState, useContext, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { Col, Form, Button, Row } from "react-bootstrap";
 import { UsersContext } from "../../UserContext";
+import { Link } from "react-router-dom";
 
 const SignupUserScreen = () => {
   const history = useHistory();
   const location = useLocation();
 
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [name, setName] = useState("");
+  // const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,10 +27,10 @@ const SignupUserScreen = () => {
   function handlesubmit(e) {
     e.preventDefault();
     const newuser = {
-      firstname,
-      lastname,
+      name,
+      // lastname,
       email,
-      age,
+      
       phone,
       password,
     };
@@ -65,21 +65,21 @@ const SignupUserScreen = () => {
           >
             <Form.Group>
               <h3 className="text-center">SIGN UP</h3>
-              <Form.Label>First Name</Form.Label>
+              <Form.Label> Name</Form.Label>
               <Form.Control
-                placeholder="Enter First Name"
-                value={firstname}
-                onChange={(text) => setFirstname(text.target.value)}
+                placeholder="Enter  Name"
+                value={name}
+                onChange={(text) => setName(text.target.value)}
               />
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 placeholder="Enter First Name"
                 value={lastname}
                 onChange={(text) => setLastname(text.target.value)}
               />
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -114,6 +114,9 @@ const SignupUserScreen = () => {
               />
             </Form.Group>
             <Button type="submit">SIGN UP</Button>
+            <p>
+              Already have account? <Link to="/login">LOGIN HERE</Link>
+            </p>
           </Form>
         </Col>
       </Row>
