@@ -33,7 +33,7 @@ function App() {
           </Route> */}
           <Route exact path="/" component={ProductList} />
           <Route path="/details" component={Details} />
-          <Route path="/cart" component={Cart} />
+          {/* <Route path="/cart" component={Cart} /> */}
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={SignupUserScreen} />
           <Route path="/order" component={AddressForm} />
