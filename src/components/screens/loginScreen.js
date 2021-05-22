@@ -2,18 +2,19 @@ import { useState, useContext, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { UsersContext } from "../../UserContext";
 import { link } from "react-router-dom";
-import { BiUser } from "react-icons/bi";
+import { FiUser } from "react-icons/fi";
 
 const LoginScreen = ({ history, location }) => {
   const { loginUser, userInfo } = useContext(UsersContext);
 
+//  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
-    if (userInfo.token) {
+    if (Object.keys(userInfo).length>0 ) {
       history.push(redirect);
     }
   }, [userInfo, history, redirect]);
@@ -21,6 +22,7 @@ const LoginScreen = ({ history, location }) => {
   function handleSubmit(e) {
     e.preventDefault();
     const loginuser = {
+      // username,
       email,
       password,
     };
@@ -51,14 +53,19 @@ const LoginScreen = ({ history, location }) => {
         }}
       >
         <h1 className="text-center">LOG IN </h1>
+        {/* <Form.Control
+          placeholder="Enter Username"
+          value={username}
+          onChange={(text) => setUsername(text.target.value)}
+        /> */}
         <Form.Control
-          placeholder="enter email"
+          placeholder="Enter  Email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <Form.Control
-          placeholder="enter password"
+          placeholder="Enter Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

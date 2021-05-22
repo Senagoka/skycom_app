@@ -26,7 +26,7 @@ class Cart extends Component {
               );
             } else {
               return (
-                <div>
+                <div className="justify-content-md-center">
                   <EmptyCart />
                   <AddressForm />
                 </div>

@@ -21,7 +21,7 @@ const UserContextProvider = ({ children }) => {
       },
     };
     const res = await axios.post(
-      "https://sky-press.herokuapp.com/api/v1/users/login",
+      "https://sky-press.herokuapp.com/api/v1/user/login",
       user,
       config
     );
@@ -51,7 +51,7 @@ const UserContextProvider = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        "https://sky-press.herokuapp.com/api/v1/users/register",
+        "https://sky-press.herokuapp.com/api/v1/user/register",
         newuser,
         config
       );

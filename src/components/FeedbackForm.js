@@ -35,19 +35,19 @@ class FeedbackForm extends Component {
       this.setState({ [errortype]: true }, () => {
         console.log(this.state.errortype);
       });
-    } else if (value.length != 0 && name == "email") {
-      if (value.includes("@") == false) {
+    } else if (value.length != 0 && name === "email") {
+      if (value.includes("@") === false) {
         this.setState({ erroremailformat: true }, () => {
           console.log(this.state.errortype);
         });
       }
-    } else if (value.length != 0 && name == "pincode") {
+    } else if (value.length != 0 && name === "pincode") {
       if (value.length < 6 || value.length > 6) {
         this.setState({ errorpincodeformat: true }, () => {
           console.log(this.state.errortype);
         });
       }
-    } else if (value.length != 0 && name == "phone") {
+    } else if (value.length != 0 && name === "phone") {
       if (value.length < 10 || value.length > 10) {
         this.setState({ errorphoneformat: true }, () => {
           console.log(this.state.errortype);

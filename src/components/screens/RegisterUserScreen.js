@@ -16,7 +16,7 @@ const SignupUserScreen = () => {
 
   const { signupUser, userInfo } = useContext(UsersContext);
 
-  const redirect = location.search ? location.search.split("=")[1] : "";
+  const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
     if (userInfo.firstname) {
@@ -60,7 +60,7 @@ const SignupUserScreen = () => {
             onSubmit={handlesubmit}
             style={{
               display: "grid",
-              border: "1px solid green",
+              border: "1px solid blue",
             }}
           >
             <Form.Group>
@@ -88,14 +88,14 @@ const SignupUserScreen = () => {
                 onChange={(text) => setEmail(text.target.value)}
               />
             </Form.Group>
-            <Form.Group>
+            {/* <Form.Group>
               <Form.Label>Age</Form.Label>
               <Form.Control
                 placeholder="Enter Age"
                 value={age}
                 onChange={(text) => setAge(text.target.value)}
               />
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group>
               <Form.Label>Phone</Form.Label>
               <Form.Control
