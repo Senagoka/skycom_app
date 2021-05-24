@@ -3,7 +3,7 @@ import Title from "./Title";
 import { storeProducts } from "../data";
 import ProductPageElement from "./ProductPageElement";
 import styles from "./ProductPage.module.css";
-import Pagination from "./Pagination";
+import Pagination from "../components/Pagination";
 
 class ProductPage extends Component {
   state = {
