@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Details from "./components/Details";
-// import Cart from "./components/Cart"; //  changed the main file in cart folder to be cart.js using package.json inside the cartfolder
+import Cart from "./components/Cart"; //  changed the main file in cart folder to be cart.js using package.json inside the cartfolder
 import Default from "./components/Default";
 import Modal from "./components/Modal";
 import AddressForm from "./components/AddressForm";
@@ -33,7 +33,7 @@ function App() {
           </Route> */}
           <Route exact path="/" component={ProductList} />
           <Route path="/details" component={Details} />
-          {/* <Route path="/cart" component={Cart} /> */}
+          <Route path="/cart" component={Cart} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={SignupUserScreen} />
           <Route path="/order" component={AddressForm} />
