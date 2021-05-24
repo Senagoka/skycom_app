@@ -14,23 +14,21 @@ const SignupUserScreen = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
-  const { signupUser, userInfo } = useContext(UsersContext);
+  const { signupUser, user } = useContext(UsersContext);
 
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
-    if (userInfo.firstname) {
-      history.push("/signin");
+    if (Object.keys(user).length > 0) {
+      history.push(redirect);
     }
-  }, [userInfo, history, redirect]);
+  }, [user, history, redirect]);
 
   function handlesubmit(e) {
     e.preventDefault();
     const newuser = {
       name,
-      // lastname,
       email,
-      
       phone,
       password,
     };
@@ -49,20 +47,8 @@ const SignupUserScreen = () => {
       }}
     >
       <Row className="justify-content-md-center">
-        <Col
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          className="border border-white mt-5 p-3"
-        >
-          <Form
-            onSubmit={handlesubmit}
-            style={{
-              display: "grid",
-              border: "1px solid blue",
-            }}
-          >
+        <Col xs={12} sm={12} md={6} lg={6} className="border mt-5 p-3">
+          <Form onSubmit={handlesubmit}>
             <Form.Group>
               <h3 className="text-center">SIGN UP</h3>
               <Form.Label> Name</Form.Label>
@@ -72,14 +58,6 @@ const SignupUserScreen = () => {
                 onChange={(text) => setName(text.target.value)}
               />
             </Form.Group>
-            {/* <Form.Group>
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                placeholder="Enter First Name"
-                value={lastname}
-                onChange={(text) => setLastname(text.target.value)}
-              />
-            </Form.Group> */}
             <Form.Group>
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -88,14 +66,6 @@ const SignupUserScreen = () => {
                 onChange={(text) => setEmail(text.target.value)}
               />
             </Form.Group>
-            {/* <Form.Group>
-              <Form.Label>Age</Form.Label>
-              <Form.Control
-                placeholder="Enter Age"
-                value={age}
-                onChange={(text) => setAge(text.target.value)}
-              />
-            </Form.Group> */}
             <Form.Group>
               <Form.Label>Phone</Form.Label>
               <Form.Control

@@ -20,19 +20,17 @@ const UserContextProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     };
-    const res = await axios.post(
+    const { data } = await axios.post(
       "https://sky-press.herokuapp.com/api/v1/user/login",
       user,
       config
     );
 
-    localStorage.setItem("userInfo", res.data.token_id);
-
-    console.log(res);
+    console.log(data);
 
     dispatch({
       type: "LOGIN",
-      payload: res.data,
+      payload: data,
     });
   }
   //logout
@@ -43,7 +41,7 @@ const UserContextProvider = ({ children }) => {
   };
 
   //register user
-  async function registerUser(newuser) {
+  async function signupUser(newuser) {
     try {
       const config = {
         headers: {
@@ -56,6 +54,8 @@ const UserContextProvider = ({ children }) => {
         config
       );
 
+      console.log(data);
+
       dispatch({
         type: "REGISTER_USER",
         payload: data,
@@ -67,7 +67,7 @@ const UserContextProvider = ({ children }) => {
 
   return (
     <UsersContext.Provider
-      value={{ userInfo: state.userInfo, loginUser, registerUser, logout }}
+      value={{ user: state.userInfo, loginUser, signupUser, logout }}
     >
       {children}
     </UsersContext.Provider>

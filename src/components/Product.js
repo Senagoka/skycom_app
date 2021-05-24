@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
-// import Cart from "./Cart";
 import PropTypes from "prop-types";
 
 class Product extends Component {
@@ -10,7 +9,7 @@ class Product extends Component {
     const { id, title, img, price, inCart } = this.props.product;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-        <div className="card  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);">
+        <div className="card shadow ">
           <ProductConsumer>
             {(value) => (
               <div
@@ -20,7 +19,12 @@ class Product extends Component {
                 }}
               >
                 <Link to="./details">
-                  <img src={img} alt="product" className="card-img-top" />
+                  <img
+                    src={img}
+                    alt="product"
+                    className="card-img-top"
+                    style={{ minHeight: 150, maxHeight: 150 }}
+                  />
                 </Link>
                 <button
                   className="cart-btn"

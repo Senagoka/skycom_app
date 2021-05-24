@@ -13,9 +13,9 @@ const LoginScreen = ({ history, location }) => {
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
-    // if (Object.keys(user).length > 0) {
-    //   history.push(redirect);
-    // }
+    if (Object.keys(user).length > 0) {
+      history.push(redirect);
+    }
   }, [history, user, redirect]);
 
   function handleSubmit(e) {
@@ -84,4 +84,3 @@ const LoginScreen = ({ history, location }) => {
   );
 };
 export default LoginScreen;
-

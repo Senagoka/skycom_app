@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import { ProductConsumer } from "../context";
 import Title from "./Title";
-import { storeProducts} from "../data";
+import { storeProducts } from "../data";
 import ProductPageElement from "./ProductPageElement";
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 import styles from "./ProductPage.module.css";
 
 class ProductPage extends Component {
@@ -48,7 +48,7 @@ class ProductPage extends Component {
     });
 
     const newProduct = this.state.actualProduct.filter((product) => {
-      if (product.title.includes(e.target.value)) return product;
+      return product.title.includes(e.target.value) && product;
     });
 
     this.setState({ product: newProduct }, () => {

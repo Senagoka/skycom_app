@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ProductConsumer } from "../context";
 import Title from "./Title";
-import { storeProducts, detailProduct } from "../data";
+import { storeProducts } from "../data";
 import ProductPageElement from "./ProductPageElement";
 import Pagination from "./pagination";
 import styles from "./ProductPage.module.css";
@@ -11,8 +10,9 @@ const ProductPage = () => {
   const [actualProduct, setActualProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentpage] = useState(1);
-  const [productsPerPage, setproductsPerPage] = useState(12);
   const [searchString, setSearchString] = useState("");
+
+  const productsPerPage = useState(12);
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
@@ -78,4 +78,3 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
-

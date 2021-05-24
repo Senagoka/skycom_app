@@ -16,11 +16,11 @@ class Modal extends Component {
           } else {
             return (
               <ModalContainer>
-                <div className="container">
+                <div>
                   <div className="row">
                     <div
                       id="modal"
-                      className="col-8 mx-auto col-md-6 col-lg-2 text-center text-capitalize p-5"
+                      className="col-8 mx-auto col-md-6 col-lg-3 text-center text-capitalize p-5 "
                     >
                       <h5>Item added to the cart</h5>
                       <img src={img} alt="product" className="img-fluid" />

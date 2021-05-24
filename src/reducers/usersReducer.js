@@ -16,7 +16,7 @@ const usersReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        userInfo: "",
+        userInfo: {},
       };
     default:
       return state;
