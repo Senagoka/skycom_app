@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-// import { ProductConsumer } from "../context";
 import Title from "./Title";
 import { storeProducts } from "../data";
 import ProductPageElement from "./ProductPageElement";
-import Pagination from "./Pagination";
 import styles from "./ProductPage.module.css";
+import Pagination from "./pagination";
 
 class ProductPage extends Component {
   state = {
