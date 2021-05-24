@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import { storeProducts } from "../data";
 import ProductPageElement from "./ProductPageElement";
-import Pagination from "./pagination";
+import PaginationComponent from "./PaginationComponent";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
@@ -64,7 +64,7 @@ const ProductPage = () => {
             </div>
             <div className="row">
               <ProductPageElement product={currentProduct} loading={loading} />
-              <Pagination
+              <PaginationComponent
                 productsPerPage={productsPerPage}
                 totalProducts={product.length}
                 paginate={paginate}

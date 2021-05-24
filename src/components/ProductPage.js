@@ -3,7 +3,7 @@ import Title from "./Title";
 import { storeProducts } from "../data";
 import ProductPageElement from "./ProductPageElement";
 import styles from "./ProductPage.module.css";
-import Pagination from "../components/Pagination";
+import PaginationComponent from "./PaginationComponent";
 
 class ProductPage extends Component {
   state = {
@@ -93,7 +93,7 @@ class ProductPage extends Component {
                   product={currentProduct}
                   loading={loading}
                 />
-                <Pagination
+                <PaginationComponent
                   productsPerPage={productsPerPage}
                   totalProducts={product.length}
                   paginate={this.paginate}
@@ -108,5 +108,3 @@ class ProductPage extends Component {
 }
 
 export default ProductPage;
-
-//------------------------
