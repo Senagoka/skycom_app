@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Details from "./components/Details";
-import Cart from "./components/Cart"; //  changed the main file in cart folder to be cart.js using package.json inside the cartfolder
+import Cart from "./components/carts"; 
 import Default from "./components/Default";
 import Modal from "./components/Modal";
 import AddressForm from "./components/AddressForm";
